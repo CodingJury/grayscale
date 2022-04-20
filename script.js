@@ -30,9 +30,7 @@ img.onload = function () {
   const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
   for (i = 0; i < imgData.data.length; i += 4) {
     let count = imgData.data[i] + imgData.data[i + 1] + imgData.data[i + 2];
-    let colour = 0;
-    if (count > 510) colour = 255;
-    else if (count > 255) colour = 127.5;
+    let colour = count/3;
 
     imgData.data[i] = colour;
     imgData.data[i + 1] = colour;
